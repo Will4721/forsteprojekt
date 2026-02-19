@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class Main {
 
 
-
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -20,8 +19,7 @@ public class Main {
 
         printLoans(loans);
 
-          // Manual sorting (NO Comparable)
-
+        // Manual sorting (NO Comparable)
 
 
         sc.close();
@@ -82,20 +80,17 @@ public class Main {
             System.out.print("Title: ");
             String title = sc.nextLine();
 
-            System.out.print("Date: "  );
-
-
+            System.out.print("Date: ");
 
 
             // Create correct object based on type
             if (type.equalsIgnoreCase("electronics")) {
-                loans[i] = new Electronics(title);
-            }
-             else if (type.equalsIgnoreCase("books")) {
-                loans[i] = new books(title);
+                loans[i] = new Electronics(title, 3);
+            } else if (type.equalsIgnoreCase("books")) {
+                loans[i] = new Books(title, 5);
 
             } else if (type.equalsIgnoreCase("video")) {
-                loans[i] = new video(title);
+                loans[i] = new Video(title, 2);
 
 
             }
@@ -113,6 +108,7 @@ public class Main {
 
         for (int i = 0; i < loans.length; i++) {
             System.out.println(loans[i]);// toString() is called automatically
-        
+
         }
-    }}
+    }
+}

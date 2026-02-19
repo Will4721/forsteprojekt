@@ -1,5 +1,5 @@
-public class video extends Loan {
-    public video(String title, int date) {
+public class Video extends Loan {
+    public Video(String title, int date) {
         super(title,date);
     }
 //hi
