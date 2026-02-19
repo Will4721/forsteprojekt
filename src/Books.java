@@ -5,7 +5,7 @@ public class Books extends Loan {
     //hi
     @Override
     public String toString() {
-        return "Books";
+        return "Books: "+getTitle();
     }
 
 }

@@ -20,6 +20,10 @@ public abstract class Loan {
         this.date = date;
     }
 
+    public String getTitle(){
+        return title;
+    }
+
     // toString method (called automatically when printing object)
     @Override
     public String toString() {

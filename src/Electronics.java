@@ -7,7 +7,7 @@ public class Electronics extends Loan {
 
     @Override
     public String toString() {
-        return "Electronics";
+        return "Electronics: "+getTitle();
     }
 
 }
