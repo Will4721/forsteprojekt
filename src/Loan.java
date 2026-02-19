@@ -24,6 +24,10 @@ public abstract class Loan {
         return title;
     }
 
+    public int getDate(){
+        return date;
+    }
+
     // toString method (called automatically when printing object)
     @Override
     public String toString() {
