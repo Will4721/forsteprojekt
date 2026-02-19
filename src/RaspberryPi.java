@@ -1,11 +1,11 @@
-public class RaspberryPi extends Main {
+public class RaspberryPi extends Loan {
     public RaspberryPi(int date) {
-       super(date);
+        super(date);
     }
 
     @Override
     public String toString() {
-        return "Cat: " +  " (meow!)";
+        return "Cat: " + " (meow!)";
     }
 
 }
