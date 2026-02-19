@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+
+
 /*
  * Test Class
  * Contains main method and several helper methods
@@ -8,6 +10,7 @@ public class Main {
 
 
     public static void main(String[] args) {
+
 
         Scanner sc = new Scanner(System.in);
 
@@ -25,18 +28,13 @@ public class Main {
         sc.close();
     }
 
-    /*
-     * Prints welcome message
-     */
+
     public static void printWelcome() {
         System.out.println("Welcome to the TechLab Loan System!");
         System.out.println("Let's register some Loans");
     }
 
-    /*
-     * Asks user how many pets they want to register
-     * Validates input
-     */
+
     public static int askForLoanCount(Scanner sc) {
 
         int count = 0;
@@ -63,9 +61,7 @@ public class Main {
         return count;
     }
 
-    /*
-     * Registers pets and returns the array
-     */
+
     public static Loan[] registerLoans(Scanner sc, int count) {
 
         Loan[] loans = new Loan[count];
@@ -88,6 +84,10 @@ public class Main {
                 loans[i] = new Electronics(title, 3);
             } else if (type.equalsIgnoreCase("books")) {
                 loans[i] = new Books(title, 5);
+                System.out.print("Author: ");
+                String Author = sc.nextLine();
+                System.out.print(Author);
+
 
             } else if (type.equalsIgnoreCase("video")) {
                 loans[i] = new Video(title, 2);
@@ -102,19 +102,26 @@ public class Main {
         return loans;
     }
 
-    /*
-     * Prints all loans in the array
-     */
+    static int p = 0;
+
     public static void printLoans(Loan[] loans) {
 
         System.out.println("\n--- Loans Registered ---");
 
+
+
+
+
+
+
         for (int i = 0; i < loans.length; i++) {
+            p++;
             System.out.println(loans[i]);// toString() is called automatically
             System.out.println("Loan Days: " + loans[i].getDate());
             System.out.println("");
             System.out.println("Summary:");
             System.out.println("You have borrowed " + loans.length + " Items");
-        } //sdjaji
-    }
-}
+        }
+    }}
+
+
