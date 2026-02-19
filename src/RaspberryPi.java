@@ -1,6 +1,7 @@
 public class RaspberryPi extends Loan {
-    public RaspberryPi(String title) {
-        super(title);
+    public RaspberryPi(String title, int date) {
+        super(title,date);
+
     }
 
 //hi

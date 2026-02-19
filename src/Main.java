@@ -82,14 +82,14 @@ public class Main {
             System.out.print("Title: ");
             String title = sc.nextLine();
 
-            System.out.print("Date: " + date.rasberry);
+            System.out.print("Date: "  );
 //hi
 
 
 
             // Create correct object based on type
             if (type.equalsIgnoreCase("electronics")) {
-                loans[i] = new Loan(title);
+                loans[i] = new electronic(title);
             }
              else if (type.equalsIgnoreCase("programming_book")) {
 
