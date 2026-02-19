@@ -1,11 +1,13 @@
 public class RaspberryPi extends Loan {
-    public RaspberryPi(int date) {
-        super(date);
+    public RaspberryPi(String title) {
+        super(title);
     }
+
+
 
     @Override
     public String toString() {
-        return "Cat: " + " (meow!)";
+        return "rasberrypi";
     }
 
 }

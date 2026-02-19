@@ -6,17 +6,19 @@ import java.util.Scanner;
  */
 public class Main {
 
+
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
         printWelcome();
 
-        int count = askForPetCount(sc);
+        int count = askForLoanCount(sc);
 
         Loan[] loans = registerLoans(sc, count);
 
-        printPets(loans);
+        printLoans(loans);
 
           // Manual sorting (NO Comparable)
 
@@ -37,7 +39,7 @@ public class Main {
      * Asks user how many pets they want to register
      * Validates input
      */
-    public static int askForPetCount(Scanner sc) {
+    public static int askForLoanCount(Scanner sc) {
 
         int count = 0;
 
@@ -74,15 +76,20 @@ public class Main {
 
             System.out.println("\nRegister loan #" + (i + 1));
 
-            System.out.print("Type (rasberrypi/cat/lizard): ");
+            System.out.print("Type (Book/video/electronics): ");
             String type = sc.nextLine();
 
-            System.out.print("Name: ");
-            int date = Integer.parseInt(sc.nextLine());
+            System.out.print("Title: ");
+            String title = sc.nextLine();
+
+            System.out.print("Date: " + date.rasberry);
+
+
+
 
             // Create correct object based on type
-            if (type.equalsIgnoreCase("rasberrypi")) {
-                loans[i] = new Loan(date);
+            if (type.equalsIgnoreCase("electronics")) {
+                loans[i] = new Loan(title);
             }
              else if (type.equalsIgnoreCase("programming_book")) {
 
@@ -95,13 +102,14 @@ public class Main {
     }
 
     /*
-     * Prints all pets in the array
+     * Prints all loans in the array
      */
-    public static void printPets(Loan[] loans) {
+    public static void printLoans(Loan[] loans) {
 
-        System.out.println("\n--- Pets Registered ---");
+        System.out.println("\n--- Loans Registered ---");
 
         for (int i = 0; i < loans.length; i++) {
-            System.out.println(loans[i]); // toString() is called automatically
+            System.out.println(loans[i]);// toString() is called automatically
+        
         }
     }}

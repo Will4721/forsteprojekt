@@ -1,22 +1,22 @@
 public class Loan {
-    private int date;
 
+private String title;
     // Constructor
-    public Loan(int date) {
-        this.date = date;
+    public Loan(String title) {
+        this.title = title;
     }
 
     // Getter method (used to access private attribute)
 
 
     // Setter method (used to change name if needed)
-    public void setDate(int date) {
-        this.date = date;
+    public void setDate(String title) {
+         this.title = title;
     }
 
     // toString method (called automatically when printing object)
     @Override
     public String toString() {
-        return "Loan: " + date;
+        return "Loan:"  + title;
     }
 }
