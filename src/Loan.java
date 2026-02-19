@@ -7,7 +7,9 @@ public class Loan {
     }
 
     // Getter method (used to access private attribute)
-
+    public int getDate(){
+        return date;
+    }
 
     // Setter method (used to change name if needed)
     public void setDate(int date) {
