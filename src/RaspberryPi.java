@@ -1,5 +1,5 @@
-public class rasberrypi extends Main {
-    public rasberrypi(int date) {
+public class RaspberryPi extends Main {
+    public RaspberryPi(int date) {
        super(date);
     }
 
