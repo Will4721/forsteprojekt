@@ -1,7 +1,7 @@
 public abstract class Loan {
 
     private String title;
-    private int date;
+   private int date;
 //hi
     // Constructor
     public Loan(String title, int date) {

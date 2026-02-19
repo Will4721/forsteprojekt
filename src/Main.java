@@ -89,13 +89,14 @@ public class Main {
 
             // Create correct object based on type
             if (type.equalsIgnoreCase("electronics")) {
-                loans[i] = new electronic(title);
+                loans[i] = new Electronics(title);
             }
              else if (type.equalsIgnoreCase("books")) {
                 loans[i] = new books(title);
 
             } else if (type.equalsIgnoreCase("video")) {
                 loans[i] = new video(title);
+
 
             }
         }
