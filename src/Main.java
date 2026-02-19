@@ -29,8 +29,8 @@ public class Main {
      * Prints welcome message
      */
     public static void printWelcome() {
-        System.out.println("🐾 Welcome to the Pet Adoption Center 🐾");
-        System.out.println("Let's register some animals!");
+        System.out.println("Welcome to the TechLab Loan System!");
+        System.out.println("Let's register some Loans");
     }
 
     /*
@@ -78,14 +78,14 @@ public class Main {
             String type = sc.nextLine();
 
             System.out.print("Name: ");
-            String name = sc.nextLine();
+            int date = Integer.parseInt(sc.nextLine());
 
             // Create correct object based on type
             if (type.equalsIgnoreCase("rasberrypi")) {
-                loans[i] = new rasberrypi(date);
+                loans[i] = new Loan(date);
             }
              else if (type.equalsIgnoreCase("programming_book")) {
-                loans[i] = new programming_book(date);
+
             } else {
 
             }
@@ -104,4 +104,4 @@ public class Main {
         for (int i = 0; i < loans.length; i++) {
             System.out.println(loans[i]); // toString() is called automatically
         }
-    }
+    }}
