@@ -1,3 +1,3 @@
-public abstract class Electronics {
+public class Electronics {
 
 }
