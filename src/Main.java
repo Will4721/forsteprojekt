@@ -64,11 +64,12 @@ public class Main {
     }
 
     /*
-     * Registers pets and returns the array
+     * Registers books and returns the array
      */
     public static Loan[] registerLoans(Scanner sc, int count) {
 
         Loan[] loans = new Loan[count];
+
 
         for (int i = 0; i < count; i++) {
 
@@ -94,7 +95,7 @@ public class Main {
 
 
             }else{
-                System.out.println("bad input");
+                System.out.println("That is not a category, try again");
                 i--;
             }
         }
@@ -112,6 +113,9 @@ public class Main {
         for (int i = 0; i < loans.length; i++) {
             System.out.println(loans[i]);// toString() is called automatically
             System.out.println("Loan Days: " + loans[i].getDate());
+            System.out.println("");
+            System.out.println("Summary:");
+            System.out.println("You have borrowed " + loans.length + " items");
         } //sdjaji
     }
 }
