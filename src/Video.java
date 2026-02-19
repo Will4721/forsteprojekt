@@ -5,7 +5,7 @@ public class Video extends Loan {
 //hi asjkdkadsj
     @Override
     public String toString() {
-        return "Video: "+getTitle();
+        return "Type: Video \nTitle: "+getTitle();
     }
 
 }
