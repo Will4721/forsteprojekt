@@ -91,9 +91,11 @@ public class Main {
             if (type.equalsIgnoreCase("electronics")) {
                 loans[i] = new electronic(title);
             }
-             else if (type.equalsIgnoreCase("programming_book")) {
+             else if (type.equalsIgnoreCase("books")) {
+                loans[i] = new books(title);
 
-            } else {
+            } else if (type.equalsIgnoreCase("video")) {
+                loans[i] = new video(title);
 
             }
         }
