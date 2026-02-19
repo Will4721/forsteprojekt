@@ -80,7 +80,7 @@ public class Main {
             System.out.print("Title: ");
             String title = sc.nextLine();
 
-            System.out.print("Date: ");
+
 
 
             // Create correct object based on type
@@ -93,6 +93,9 @@ public class Main {
                 loans[i] = new Video(title, 2);
 
 
+            }else{
+                System.out.println("bad input");
+                i--;
             }
         }
 
