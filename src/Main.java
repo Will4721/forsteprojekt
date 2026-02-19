@@ -113,6 +113,8 @@ public class Main {
             System.out.println(loans[i]);// toString() is called automatically
             System.out.println("Loan Days: " + loans[i].getDate());
             System.out.println("");
+            System.out.println("Summary:");
+            System.out.println("You have borrowed " + loans.length + " Items");
         } //sdjaji
     }
 }
