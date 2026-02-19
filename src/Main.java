@@ -74,7 +74,7 @@ public class Main {
 
             System.out.println("\nRegister loan #" + (i + 1));
 
-            System.out.print("Type (Book/video/electronics): ");
+            System.out.print("Type (Books/video/electronics): ");
             String type = sc.nextLine();
 
             System.out.print("Title: ");
