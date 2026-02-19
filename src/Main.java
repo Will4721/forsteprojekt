@@ -109,6 +109,6 @@ public class Main {
         for (int i = 0; i < loans.length; i++) {
             System.out.println(loans[i]);// toString() is called automatically
             System.out.println("Loan Days: " + loans[i].getDate());
-        }
+        } //sdjaji
     }
 }
