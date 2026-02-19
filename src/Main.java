@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 
-
 /*
  * Test Class
  * Contains main method and several helper methods
@@ -77,23 +76,20 @@ public class Main {
             String title = sc.nextLine();
 
 
-
-
             // Create correct object based on type
             if (type.equalsIgnoreCase("electronics")) {
                 loans[i] = new Electronics(title, 3);
             } else if (type.equalsIgnoreCase("books")) {
-                loans[i] = new Books(title, 5);
                 System.out.print("Author: ");
-                String Author = sc.nextLine();
-                System.out.print(Author);
-
-
+                String author = sc.nextLine();
+                loans[i] = new Books(title, 5, author);
             } else if (type.equalsIgnoreCase("video")) {
-                loans[i] = new Video(title, 2);
+                System.out.print("Duration: ");
+                int duration = sc.nextInt();
+                loans[i] = new Video(title, 2, duration);
 
 
-            }else{
+            } else {
                 System.out.println("bad input");
                 i--;
             }
@@ -109,19 +105,16 @@ public class Main {
         System.out.println("\n--- Loans Registered ---");
 
 
-
-
-
-
-
         for (int i = 0; i < loans.length; i++) {
             p++;
             System.out.println(loans[i]);// toString() is called automatically
             System.out.println("Loan Days: " + loans[i].getDate());
             System.out.println("");
-            System.out.println("Summary:");
-            System.out.println("You have borrowed " + loans.length + " Items");
+
         }
-    }}
+        System.out.println("Summary:");
+        System.out.println("You have borrowed " + loans.length + " Items");
+    }
+}
 
 
