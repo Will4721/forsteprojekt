@@ -1,4 +1,4 @@
-public class Loan {
+public abstract class Loan {
     private int date;
 
     // Constructor
