@@ -69,11 +69,11 @@ public class Main {
 
             System.out.println("\nRegister loan #" + (i + 1));
 
-            System.out.print("Type (Books/video/electronics): ");
+            System.out.print("Type (Books/Video/Electronics): ");
             String type = sc.nextLine();
 
             if (type.equalsIgnoreCase("electronics")) {
-                System.out.print("Type (Arduino/Raspberry Pi): ");
+                System.out.print("Type (Arduino/Raspberry Pi/VR Equipment): ");
                 String typeElectronics = sc.nextLine();
                 if (typeElectronics.equalsIgnoreCase("Arduino")) {
                     System.out.print("Kit Level: ");
