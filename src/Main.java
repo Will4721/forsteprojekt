@@ -138,27 +138,32 @@ public class Main {
     }
     public static void saveLoanToFirebase(Loan loan) {
         try {
+            //vi åbner forbindelse til internettet
             URL url = new URL("https://loan-df553-default-rtdb.europe-west1.firebasedatabase.app/loans.json");
+            //vi åbner forbindelse til internettet
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-
+            // vi poster data til firebase
             conn.setRequestMethod("POST");
+            //vi fortæller server at vi sender Json data
             conn.setRequestProperty("Content-Type", "application/json");
+            // har vi forbindelse?
             conn.setDoOutput(true);
 
             // Få typen dynamisk fra klassen
             String type = loan.getClass().getSimpleName();
-
+        // vi bygger JSON manuelt
             String jsonInput = "{"
                     + "\"title\":\"" + loan.getTitle() + "\","
                     + "\"days\":" + loan.getDate() + ","
                     + "\"type\":\"" + type + "\""
                     + "}";
 
+            // det er her vi faktisk sender Json teksten til firebase
             OutputStream os = conn.getOutputStream();
             os.write(jsonInput.getBytes());
             os.flush();
             os.close();
-
+          // vi tvinger den til at sende
             conn.getResponseCode();
             conn.disconnect();
 
@@ -171,11 +176,15 @@ public class Main {
 
     public static void showAllLoans() {
         try {
+            //firebase URL
             URL url = new URL("https://loan-df553-default-rtdb.europe-west1.firebasedatabase.app/loans.json");
+            //vi åbner forbindelse til internettet
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            //vi henter data
             conn.setRequestMethod("GET");
-
+           // vi bruger scanner til at læse Firebase data
             Scanner sc = new Scanner(conn.getInputStream());
+            //vi gemmer dataen her som en lang tekst
             StringBuilder json = new StringBuilder();
             while (sc.hasNextLine()) {
                 json.append(sc.nextLine());
@@ -183,8 +192,17 @@ public class Main {
             sc.close();
             conn.disconnect();
 
+            // vi bruger Gson til at konvertere JSON til Java-objekter
             Gson gson = new Gson();
+
+//  den præcise datatype vi forventer fra Firebase:
+// et Map hvor nøglen er Firebase's auto-genererede ID (String)
+// og værdien er et LoanData-objekt.
+// TypeToken bruges fordi Java fjerner noget information mens den kører
             Type type = new TypeToken<Map<String, LoanData>>(){}.getType();
+
+// Konverterer JSON-teksten fra Firebase til et Map<String, LoanData>.
+// Gson opretter automatisk LoanData-objekter og fylder dem med data fra JSON.
             Map<String, LoanData> loans = gson.fromJson(json.toString(), type);
 
             System.out.println("\n--- All Loans ---");
