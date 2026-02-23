@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 
 /*
- * Test Class hi
+ * Test Class hi im
  * Contains main method and several helper methods
  */
 public class Main {
