@@ -1,4 +1,4 @@
-public class Electronics extends Loan {
+public abstract class Electronics extends Loan {
 
     public Electronics(String title, int date) {
         super(title, date);
