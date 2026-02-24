@@ -136,9 +136,9 @@ public class Main {
 
         }
         System.out.println("Summary:");
-        System.out.println("You have borrowed " + loans.length + " Items");
+        System.out.println("You have borrowed " + loans.length + " items");
     }
-    public static void sortPetsByName(Loan[] loans) {
+    public static void sortLoansByName(Loan[] loans) {
 
         // Outer loop controls number of passes
         for (int i = 0; i < loans.length - 1; i++) {
