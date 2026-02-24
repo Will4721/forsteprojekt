@@ -1,6 +1,6 @@
 public class Video extends Loan {
-    private String duration;
-    public Video(String title, int date, String duration) {
+    private int duration;
+    public Video(String title, int date, int duration) {
         super(title,date);
         this.duration=duration;
     }

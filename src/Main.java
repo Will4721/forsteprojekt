@@ -110,7 +110,8 @@ public class Main {
                 System.out.print("Title: ");
                 String titleVideo = sc.nextLine();
                 System.out.print("Duration: ");
-                String duration = sc.nextLine();
+                int duration = sc.nextInt();
+                sc.nextLine(); // Clear buffer
                 loans[i] = new Video(titleVideo, 2, duration);
             } else {
                 System.out.println("bad input");
