@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 
 /*
- * Test Class hi im
+ * Test Class hi
  * Contains main method and several helper methods
  */
 public class Main {
@@ -19,9 +19,13 @@ public class Main {
 
         Loan[] loans = registerLoans(sc, count);
 
+        sortPetsByName(loans);
+
         printLoans(loans);
 
-        // Manual sorting (NO Comparable)
+
+
+
 
 
         sc.close();
@@ -115,7 +119,32 @@ public class Main {
         System.out.println("Summary:");
         System.out.println("You have borrowed " + loans.length + " Items");
     }
+    public static void sortPetsByName(Loan[] loans) {
+
+        // Outer loop controls number of passes
+        for (int i = 0; i < loans.length - 1; i++) {
+
+            // Inner loop compares neighboring elements
+            for (int j = 0; j < loans.length - 1 - i; j++) {
+
+                /*
+                 * compareTo compares two Strings alphabetically.
+                 * If result > 0, first name comes AFTER second name.
+                 * That means we need to swap them.
+                 */
+                if (loans[j].getTitle()
+                        .compareTo(loans[j + 1].getTitle()) > 0) {
+
+                    // Swap objects
+                    Loan temp = loans[j];
+                    loans[j] = loans[j + 1];
+                    loans[j + 1] = temp;
+                }
+            }
+        }
+    }
 }
+
 
 
 
