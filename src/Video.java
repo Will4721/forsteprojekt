@@ -9,5 +9,4 @@ public class Video extends Loan {
     public String toString() {
         return "Type: Video \nTitle: "+getTitle()+ "\nDuration: " + duration;
     }
-
 }

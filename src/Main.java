@@ -19,7 +19,7 @@ public class Main {
 
         Loan[] loans = registerLoans(sc, count);
 
-        sortPetsByName(loans);
+        sortLoansByName(loans);
 
         printLoans(loans);
 
