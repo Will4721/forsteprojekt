@@ -133,7 +133,6 @@ public class Main {
         return loans;
     }
 
-    static int p = 0;
 
     public static void printLoans(Loan[] loans) {
 
@@ -141,7 +140,6 @@ public class Main {
 
 
         for (int i = 0; i < loans.length; i++) {
-            p++;
             System.out.println(loans[i]);// toString() is called automatically
             System.out.println("Loan Days: " + loans[i].getDate());
             System.out.println("");
