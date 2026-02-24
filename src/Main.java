@@ -73,26 +73,45 @@ public class Main {
 
             System.out.println("\nRegister loan #" + (i + 1));
 
-            System.out.print("Type (Books/video/electronics): ");
+            System.out.print("Type (Books/Video/Electronics): ");
             String type = sc.nextLine();
 
-            System.out.print("Title: ");
-            String title = sc.nextLine();
+            if (type.equalsIgnoreCase("electronics")) {
+                System.out.print("Type (Arduino/Raspberry Pi/VR Equipment): ");
+                String typeElectronics = sc.nextLine();
+                if (typeElectronics.equalsIgnoreCase("Arduino")) {
+                    System.out.print("Kit Level: ");
+                    String kitLevel = sc.nextLine();
+                    loans[i] = new Arduino("Arduino", 3, kitLevel);
+                } else if (typeElectronics.equalsIgnoreCase("Raspberry Pi")) {
+                    System.out.print("Model: ");
+                    String model = sc.nextLine();
+                    loans[i] = new RaspberryPi("Raspberry Pi", 3, model);
+                } else if (typeElectronics.equalsIgnoreCase("VR Equipment")) {
+                    System.out.print("Model: ");
+                    String model = sc.nextLine();
+                    loans[i] = new RaspberryPi("VR Equipment", 3, model);
+                } else {
+                    System.out.println("bad input");
+                    i--;
+                }
+
+            }
 
 
             // Create correct object based on type
-            if (type.equalsIgnoreCase("electronics")) {
-                loans[i] = new Electronics(title, 3);
-            } else if (type.equalsIgnoreCase("books")) {
+            else if (type.equalsIgnoreCase("books")) {
+                System.out.print("Title: ");
+                String titleBooks = sc.nextLine();
                 System.out.print("Author: ");
                 String author = sc.nextLine();
-                loans[i] = new Books(title, 5, author);
+                loans[i] = new Books(titleBooks, 5, author);
             } else if (type.equalsIgnoreCase("video")) {
+                System.out.print("Title: ");
+                String titleVideo = sc.nextLine();
                 System.out.print("Duration: ");
-                int duration = sc.nextInt();
-                loans[i] = new Video(title, 2, duration);
-
-
+                String duration = sc.nextLine();
+                loans[i] = new Video(titleVideo, 2, duration);
             } else {
                 System.out.println("bad input");
                 i--;
