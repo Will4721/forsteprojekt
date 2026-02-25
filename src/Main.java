@@ -86,7 +86,7 @@ public class Main {
                 } else if (typeElectronics.equalsIgnoreCase("VR Equipment")) {
                     System.out.print("Model: ");
                     String model = sc.nextLine();
-                    loans[i] = new VREquipment("VR Equipment", 3, model);
+                    loans[i] = new VRquipment("VR Equipment", 3, model);
                 } else {
                     System.out.println("bad input");
                     i--;
