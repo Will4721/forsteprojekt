@@ -24,10 +24,6 @@ public class Main {
         printLoans(loans);
 
 
-
-
-
-
         sc.close();
     }
 
@@ -110,9 +106,24 @@ public class Main {
                 System.out.print("Title: ");
                 String titleVideo = sc.nextLine();
                 System.out.print("Duration: ");
-                int duration = sc.nextInt();
-                sc.nextLine(); // Clear buffer
-                loans[i] = new Video(titleVideo, 2, duration);
+                int duration;
+                while (true) {
+                    if (sc.hasNextInt()) {
+                        duration = sc.nextInt();
+                        sc.nextLine(); // Clear buffer
+
+                        if (duration > 0) {
+                            break;
+                        } else {
+                            System.out.println("Please enter a positive number!");
+                        }
+                    } else {
+                        System.out.println("That wasn't a number, try again!");
+                        sc.nextLine(); // Clear invalid input
+                    }
+                }
+                    loans[i] = new Video(titleVideo, 2, duration);
+
             } else {
                 System.out.println("bad input");
                 i--;
@@ -122,7 +133,6 @@ public class Main {
         return loans;
     }
 
-    static int p = 0;
 
     public static void printLoans(Loan[] loans) {
 
@@ -130,7 +140,6 @@ public class Main {
 
 
         for (int i = 0; i < loans.length; i++) {
-            p++;
             System.out.println(loans[i]);// toString() is called automatically
             System.out.println("Loan Days: " + loans[i].getDate());
             System.out.println("");
@@ -139,6 +148,7 @@ public class Main {
         System.out.println("Summary:");
         System.out.println("You have borrowed " + loans.length + " items");
     }
+
     public static void sortLoansByName(Loan[] loans) {
 
         // Outer loop controls number of passes
