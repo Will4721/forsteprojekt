@@ -1,0 +1,20 @@
+name: Hello and Goodbye Workflow
+
+on:
+  push:
+    branches:
+      - main           # Only run when pushing to the main branch
+  workflow_dispatch:   # Manual trigger from GitHub Actions UI
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest # spin up a virtual ubuntu server on GitHub
+    steps:
+      - name: Say Hello
+        run: echo "Hello world"
+
+  goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Goodbye
+        run: echo "Goodbye"
